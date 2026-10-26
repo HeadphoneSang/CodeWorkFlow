@@ -1,0 +1,5 @@
+- [2026-10-26][claude-code:assistant] 项目 book_view 创建，登记需求 001-file-transfer（文件上传与下载网站），状态 TODO
+- [2026-10-26 15:06][claude-code:frontend] 认领 frontend 角色；真实目录已 git init(main) 并开 feature/001-file-transfer；技术栈定为 FastAPI + 原生前端，开始定义契约
+- [2026-10-26 15:10][claude-code:frontend] 契约 v2 已定义(/upload /files /download/{id})；前端 UI + api.js 封装完成，6 个单测全通过，提交 0b2e665 → 等待用户 Code Review
+- [2026-10-26 15:12][opencode:frontend] 沉淀经验 knowledge/lessons/test-node-test-glob.md：node --test 传目录报 MODULE_NOT_FOUND，应改 glob 模式
+- [2026-10-26 15:20][zcode:backend] 认领 backend 角色，确认契约 v2（无结构变更）；开始实现 FastAPI 后端 /upload /files /download
