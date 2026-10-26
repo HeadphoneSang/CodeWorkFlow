@@ -3,3 +3,4 @@
 - [2026-10-26 15:10][claude-code:frontend] 契约 v2 已定义(/upload /files /download/{id})；前端 UI + api.js 封装完成，6 个单测全通过，提交 0b2e665 → 等待用户 Code Review
 - [2026-10-26 15:12][opencode:frontend] 沉淀经验 knowledge/lessons/test-node-test-glob.md：node --test 传目录报 MODULE_NOT_FOUND，应改 glob 模式
 - [2026-10-26 15:20][zcode:backend] 认领 backend 角色，确认契约 v2（无结构变更）；开始实现 FastAPI 后端 /upload /files /download
+- [2026-10-26 15:32][zcode:backend] /upload /files /download/{id} 已实现，7 个 pytest 单测全通过；另起 uvicorn 冒烟验证(上传/列表/下载头/404)正常，提交 52c35d9 → 等待用户 Code Review
