@@ -4,3 +4,4 @@
 
 - [在本机执行任何 shell 命令前] 本机是 Windows，命令按 Unix/bash 语法写，勿用 NUL、反斜杠路径等 cmd 写法 → lessons/env-windows-shell.md
 - [用 node --test 跑单测且参数传目录时] 裸目录会被当模块 require 报 MODULE_NOT_FOUND，改传 glob 模式 "dir/*.test.js" → lessons/test-node-test-glob.md
+- 测试冲突
