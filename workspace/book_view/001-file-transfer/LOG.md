@@ -4,3 +4,4 @@
 - [2026-10-26 15:12][opencode:frontend] 沉淀经验 knowledge/lessons/test-node-test-glob.md：node --test 传目录报 MODULE_NOT_FOUND，应改 glob 模式
 - [2026-10-26 15:20][zcode:backend] 认领 backend 角色，确认契约 v2（无结构变更）；开始实现 FastAPI 后端 /upload /files /download
 - [2026-10-26 15:32][zcode:backend] /upload /files /download/{id} 已实现，7 个 pytest 单测全通过；另起 uvicorn 冒烟验证(上传/列表/下载头/404)正常，提交 52c35d9 → 等待用户 Code Review
+- [2026-10-26 16:00][zcode:assistant] 用户反馈"前端上传失败"；排查：curl 冒烟后端三接口全部正常、静态页与 JS 模块均 200 → 定位为用户以 file:// 双击打开 index.html（ES module 被 CORS 拦截+fetch 相对路径失效）。指导改用 http://127.0.0.1:8000/ 访问；沉淀经验 knowledge/lessons/env-file-protocol-fetch.md
