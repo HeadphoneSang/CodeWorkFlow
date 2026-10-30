@@ -1,2 +1,4 @@
 - [2026-10-30][zcode:backend] 需求启动：完成方案确认（8 项决策见 STATUS.md），登记契约 v1，认领 backend 角色，基线分支 feature/auth
 - [2026-10-30 19:40][zcode:frontend] 认领 frontend 角色：按契约 v1 适配 Flutter 前端（D:\pro\note_project\note_for_android）接口地址 → /api/auth/** 与 /api/note/**，baseUrl 切到网关
+- [2026-10-30 20:05][opencode:meta] 生成 workspace/note/STRUCTURE.md（commit 917f19e）：缓存后端 5 模块目录树 + 各模块包名对照表（dto=com.chcbcraft / auth·gateway·userInfo=com.chbcraft / note-module=org.template），后续会话读它即可，勿重复扫描真实目录
+- [2026-10-30 20:05][zcode:frontend] 接口适配完成（feature/auth 分支 3 个提交）：①baseUrl 切网关(47.104.25.40:80)+认证域 5 处→/api/auth/**；②笔记域 21 处→/api/note/**（6 文件，含双引号路径 4 处）；③新增 test/api_prefix_test.dart 前缀回归测试。测试：新测试通过；widget_test 在 main 基线同样失败（历史遗留，与本次无关）；analyze 6 warning 均为历史 unused lint。等待用户 Code Review。
