@@ -1,0 +1,1 @@
+- [2026-10-30][zcode:backend] 需求启动：完成方案确认（8 项决策见 STATUS.md），登记契约 v1，认领 backend 角色，基线分支 feature/auth
