@@ -2,3 +2,11 @@
 - [2026-10-30 19:40][zcode:frontend] 认领 frontend 角色：按契约 v1 适配 Flutter 前端（D:\pro\note_project\note_for_android）接口地址 → /api/auth/** 与 /api/note/**，baseUrl 切到网关
 - [2026-10-30 20:05][opencode:meta] 生成 workspace/note/STRUCTURE.md（commit 917f19e）：缓存后端 5 模块目录树 + 各模块包名对照表（dto=com.chcbcraft / auth·gateway·userInfo=com.chbcraft / note-module=org.template），后续会话读它即可，勿重复扫描真实目录
 - [2026-10-30 20:05][zcode:frontend] 接口适配完成（feature/auth 分支 3 个提交）：①baseUrl 切网关(47.104.25.40:80)+认证域 5 处→/api/auth/**；②笔记域 21 处→/api/note/**（6 文件，含双引号路径 4 处）；③新增 test/api_prefix_test.dart 前缀回归测试。测试：新测试通过；widget_test 在 main 基线同样失败（历史遗留，与本次无关）；analyze 6 warning 均为历史 unused lint。等待用户 Code Review。
+- [2026-10-30 19:20][zcode:backend] auth-module 骨架完成（pom/启动类/yml 8081）
+- [2026-10-30 19:35][zcode:backend] dto-module 完成：UserContext + AuthRedisKey + 修 2 个既有构建问题（noteback 循环依赖、NoteDiffRequest 错误 import）；踩坑：dto 包名是 com.chcbcraft 多个 c，已沉淀 knowledge
+- [2026-10-30 19:40][zcode:backend] auth-module 完成 JwtUtil(配置化)/Captcha/Email/UserContextInterceptor + 单测 10 例
+- [2026-10-30 19:45][zcode:backend] auth-module 完成 UserService/UserController/UserMapper + 单测 10 例；logout key 修复
+- [2026-10-30 19:50][zcode:backend] note-module 清理完成：删 5 个认证类、controller 改 UserContext；发现并修复 note-module 被误登记为 gitlink 的问题（此前从未真正入父仓库，本次 82 文件实体纳入）
+- [2026-10-30 20:00][zcode:backend] gateway 完成：/api/auth 路由 + 白名单 + logout key 统一 + dto-module 依赖。遗留：GlobalJwtFilterTest 在本机 mvn/javac 下稳定报「程序包不存在」（Mini 最小用例可通过，根因未明，已排除 classpath/编码/包名/文件名/增量），测试文件保留在 commit e382109 历史、6e96a6d 暂时移除，待 IDEA 环境验证后恢复
+- [2026-10-30 20:05][zcode:backend] 修复 gateway pom 缺 spring-boot-maven-plugin（jar 无法 java -jar）；沉淀知识：git-bash curl 发中文 JSON 按 GBK 编码导致服务端 JSON parse error
+- [2026-10-30 20:15][zcode:backend] 全仓库 5 模块构建 SUCCESS，单测 30 例全绿；E2E 7 步全通（注册→登录→UserContext 取身份→登出→旧 token 401，logout 修复生效）。置 REVIEW，等待用户 Code Review
