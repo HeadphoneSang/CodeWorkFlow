@@ -6,6 +6,7 @@ branch: feature/auth
 | 角色 | 状态 | owner | claimed_at | 当前步骤 | 下一步 |
 |---|---|---|---|---|---|
 | backend | DOING | zcode:backend | 2026-10-30 | 工作流登记 | auth-module 骨架 |
+| frontend | DOING | zcode:frontend | 2026-10-30 19:40 | 认领：前端接口适配 | 全量核对调用点→改 baseUrl 与路径前缀 |
 
 ## 已确认决策
 1. 资料接口 /user/info、/user/update-info 留 note-module

@@ -1,5 +1,6 @@
 # note
 real_dir: D:\pro\note_project\note
+frontend_dir: D:\pro\note_project\note_for_android
 desc: 微服务笔记系统（Spring Boot 3.3.4 + Spring Cloud Alibaba，模块：gateway/note/userInfo/dto/auth）
 
 ## 需求进度

@@ -1,1 +1,2 @@
 - [2026-10-30][zcode:backend] 需求启动：完成方案确认（8 项决策见 STATUS.md），登记契约 v1，认领 backend 角色，基线分支 feature/auth
+- [2026-10-30 19:40][zcode:frontend] 认领 frontend 角色：按契约 v1 适配 Flutter 前端（D:\pro\note_project\note_for_android）接口地址 → /api/auth/** 与 /api/note/**，baseUrl 切到网关
