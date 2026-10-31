@@ -8,4 +8,5 @@
 - [在 note 项目 dto-module 新建 Java 文件或报"程序包X不存在"] 包名是 com.chcbcraft（比 groupId 多个 c），别写成 com.chbcraft → lessons/code-package-typo-chcbcraft.md
 - [本机要跑 mvn 或报 compiler-plugin 需 Maven≥3.6.3] 用 D:/tools/apache-maven-3.9.9/bin/mvn.cmd，PATH 里没有 mvn → lessons/env-maven-3-6-2-too-old.md
 - [git-bash 里 curl -d 发中文 JSON] 请求体被按 GBK 编码，服务端报 Invalid UTF-8 middle byte，用 ASCII 或 @file.json → lessons/env-curl-gbk-json.md
+- [mvn test 偶发 MockMaker/attach 大批 ERROR] byte-buddy 外部 attach 在 Windows 有偶发竞态，先原样重跑再排查，别急着当回归 → lessons/test-mockito-attach-flaky.md
 - 测试冲突

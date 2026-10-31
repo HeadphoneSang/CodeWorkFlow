@@ -10,3 +10,4 @@
 - [2026-10-30 20:00][zcode:backend] gateway 完成：/api/auth 路由 + 白名单 + logout key 统一 + dto-module 依赖。遗留：GlobalJwtFilterTest 在本机 mvn/javac 下稳定报「程序包不存在」（Mini 最小用例可通过，根因未明，已排除 classpath/编码/包名/文件名/增量），测试文件保留在 commit e382109 历史、6e96a6d 暂时移除，待 IDEA 环境验证后恢复
 - [2026-10-30 20:05][zcode:backend] 修复 gateway pom 缺 spring-boot-maven-plugin（jar 无法 java -jar）；沉淀知识：git-bash curl 发中文 JSON 按 GBK 编码导致服务端 JSON parse error
 - [2026-10-30 20:15][zcode:backend] 全仓库 5 模块构建 SUCCESS，单测 30 例全绿；E2E 7 步全通（注册→登录→UserContext 取身份→登出→旧 token 401，logout 修复生效）。置 REVIEW，等待用户 Code Review
+- [2026-10-30 22:37][zcode:backend] 用户 Code Review 通过，001 置 DONE。用户已自行处理 git 收尾：提交在途 rename（207caaa "before_delete_branch"，Main.java→NoteMainApplication.java）并将 feature/auth 整体合入 main、删除 feature 分支。main 全 reactor 33 测试全绿（复验）。遗留备忘：前端真机联调仍待后端部署，届时按需另开需求。

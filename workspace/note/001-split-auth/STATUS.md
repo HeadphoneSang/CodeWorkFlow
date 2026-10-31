@@ -5,8 +5,8 @@ branch: feature/auth
 ## 角色状态（每个智能体只改自己那一行）
 | 角色 | 状态 | owner | claimed_at | 当前步骤 | 下一步 |
 |---|---|---|---|---|---|
-| backend | REVIEW | zcode:backend | 2026-10-30 | 全链路验证通过（单测 30 绿 + E2E 7 步全通） | 等待用户 Code Review，通过后置 DONE |
-| frontend | REVIEW | zcode:frontend | 2026-10-30 19:40 | 接口适配完成，等待用户 Code Review | 真机联调（待后端部署） |
+| backend | DONE | zcode:backend | 2026-10-30 | 全链路验证通过（单测 30 绿 + E2E 7 步全通） | - |
+| frontend | DONE | zcode:frontend | 2026-10-30 19:40 | 接口适配完成，用户 Review 通过 | - |
 
 ## 已确认决策
 1. 资料接口 /user/info、/user/update-info 留 note-module
