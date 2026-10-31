@@ -26,12 +26,17 @@ agent_code_workflow/
 ├── AGENT_GUID.md               # ★ 唯一提示词来源（所有智能体统一遵循）
 ├── CLAUDE.md                   # Claude Code 适配层：只路由，不存内容
 ├── AGENTS.md                   # Codex 适配层：只路由，不存内容
+├── _refs/                      # 提示词引用层（模板/格式/流程，按需读取）
+│   ├── templates.md            #   各状态文件的 Markdown 模板
+│   ├── knowledge.md            #   经验正文格式与沉淀细节
+│   └── structure.md            #   STRUCTURE.md 扫描/刷新流程
 ├── knowledge/                  # 跨项目共享的经验知识库（按需加载）
 │   ├── INDEX.md                #   经验索引：会话启动只加载这一个
 │   └── lessons/*.md            #   经验正文：任务命中触发条件才读
 └── workspace/                  # 状态工作区
     └── <项目名>/
         ├── PROJECT.md          # 项目全局执行路径（需求进度表 + 当前焦点）
+        ├── STRUCTURE.md        #   真实目录结构缓存（写代码时才读，见下）
         └── <需求ID>/           # 每个需求一个隔离分区，如 001-user-login/
             ├── STATUS.md       #   各角色执行状态（兼认领锁）
             ├── CONTRACT.md     #   前后端接口契约（握手文件）
@@ -69,6 +74,18 @@ agent_code_workflow/
 - 任务命中某条经验的触发条件时，才读取对应正文；
 - 同类错误出现 ≥2 次、错误可复现、或被用户纠正时，智能体必须沉淀新条目或修正旧条目。
 
+### 5. 渐进式加载（提示词与上下文都按需）
+
+不占每次会话的上下文，细节只在"动手那一瞬"才读：
+
+| 内容 | 读取时机 |
+|---|---|
+| `AGENT_GUID.md`（核心纪律） | 每次会话必读（唯一常驻提示词） |
+| `PROJECT.md` + `knowledge/INDEX.md` | 会话启动读（项目焦点 + 经验触发器） |
+| `_refs/`（模板/格式/流程） | 要建/改对应文件时读对应段 |
+| `STRUCTURE.md`（项目结构缓存） | 要写代码/定位文件时才读（比对 commit 判过期） |
+| `knowledge/lessons/*.md` | 任务命中某条触发条件时才读 |
+
 ## 状态流转
 
 ```
@@ -83,7 +100,8 @@ TODO → DOING → (实现 → 自测通过) → REVIEW（等用户） → DONE
 
 | 文件 | 角色 |
 |---|---|
-| `AGENT_GUID.md` | 唯一提示词来源，所有规则都在这里 |
+| `AGENT_GUID.md` | 唯一提示词来源，只放必须常驻的核心纪律 |
+| `_refs/*.md` | 引用层：模板/格式/流程细节，按需读取，不常驻上下文 |
 | `CLAUDE.md` / `AGENTS.md` | 各工具的适配层，只做一行路由指向 `AGENT_GUID.md`，冲突时以 `AGENT_GUID.md` 为准 |
 
 改工作流规则 = 只改 `AGENT_GUID.md`，所有接入的智能体同步生效。
